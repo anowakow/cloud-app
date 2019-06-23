@@ -30,6 +30,10 @@ steps:
     keepToken: false
     tokenPrefix: '#{'
     tokenSuffix: '}#'
+- task: CopyFiles@2
+  inputs:
+    Contents: 'k8s-deployment-manifest.yaml'
+    TargetFolder: '$(Build.ArtifactStagingDirectory)'
 - task: Docker@2
   inputs:
     containerRegistry: 'registry-connection'
