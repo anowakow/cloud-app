@@ -1,0 +1,51 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: cloud-app-front
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: cloud-app-front
+  template:
+    metadata:
+      labels:
+        app: cloud-app-front
+    spec:
+      nodeSelector:
+        "beta.kubernetes.io/os": linux
+      containers:
+        - name: cloud-app-front
+          image: ancntregistry.azurecr.io/cloud-app-front:#{Build.BuildId}#
+          ports:
+            - containerPort: 80
+              name: cloud-app-front
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: cloud-app-front
+spec:
+  ports:
+    - port: 80
+  selector:
+    app: cloud-app-front
+---
+apiVersion: extensions/v1beta1
+kind: Ingress
+metadata:
+  name: cloud-app
+  annotations:
+    kubernetes.io/ingress.class: addon-http-application-routing
+spec:
+  rules:
+  - http:
+      paths:
+      - path: /api/*
+        backend:
+          serviceName: cloud-app-back
+          servicePort: 8080
+      - path: /
+        backend:
+          serviceName: cloud-app-front
+          servicePort: 80 
