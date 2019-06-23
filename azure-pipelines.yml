@@ -21,6 +21,15 @@ steps:
     npm install
     ng build --prod
   displayName: 'npm install and build'
+- task: replacetokens@3
+  inputs:
+    targetFiles: '**/*.yaml'
+    encoding: 'auto'
+    writeBOM: true
+    actionOnMissing: 'warn'
+    keepToken: false
+    tokenPrefix: '#{'
+    tokenSuffix: '}#'
 - task: Docker@2
   inputs:
     containerRegistry: 'registry-connection'
