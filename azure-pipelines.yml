@@ -21,3 +21,9 @@ steps:
     npm install
     ng build --prod
   displayName: 'npm install and build'
+- task: Docker@2
+  inputs:
+    containerRegistry: 'registry-connection'
+    repository: 'cloud-app-front'
+    command: 'buildAndPush'
+    Dockerfile: '**/Dockerfile'
