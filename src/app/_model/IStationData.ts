@@ -1,20 +1,14 @@
 export interface IStationData {
 
-// tslint:disable-next-line:variable-name
-id_stacji: number ;
+
+idStacji: number ;
 stacja: string;
-// tslint:disable-next-line:variable-name
-data_pomiaru: string;
-// tslint:disable-next-line:variable-name
-godzina_pomiaru: number;
+dataPomiaru: string;
+godzinaPomiaru: number;
 temperatura: number;
-// tslint:disable-next-line:variable-name
-predkosc_wiatru: number;
-// tslint:disable-next-line:variable-name
-kierunek_wiatru: number;
-// tslint:disable-next-line:variable-name
-wilgotnosc_wzgledna: number;
-// tslint:disable-next-line:variable-name
-suma_opadu: number;
+predkoscWiatru: number;
+kierunekWiatru: number;
+wilgotnoscWzgledna: number;
+sumaOpadu: number;
 cisnienie: number;
 }

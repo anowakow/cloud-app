@@ -10,12 +10,10 @@ import { IStationData } from 'src/app/_model/IStationData';
 export class HomeComponent implements OnInit {
 
   stationData: IStationData[];
-  constructor(private meteoService: MeteoService) { }
+  constructor() { }
 
   ngOnInit() {
-    this.meteoService.getStationData().subscribe(data => {
-      this.stationData = data;
-    });
+
   }
 
 }
