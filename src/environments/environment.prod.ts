@@ -1,4 +1,4 @@
 export const environment = {
   production: true,
-  meteoServiceURL: 'http://cloud-app.an.net.pl/api/meteo'
+  meteoServiceURL: 'https://cloud-app.an.net.pl/api/meteo'
 };
