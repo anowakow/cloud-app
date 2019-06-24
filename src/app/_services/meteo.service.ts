@@ -13,7 +13,6 @@ export class MeteoService {
   public getStationData() {
 
     const url = environment.meteoServiceURL;
-    
     return this.http.get<IStationData[]>(url);
   }
 }
