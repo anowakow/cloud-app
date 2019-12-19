@@ -7,6 +7,12 @@ import { Component, OnInit } from '@angular/core';
 })
 export class TopBarComponent implements OnInit {
 
+  /********************************************** */
+
+  ownText = 'Mój własny tekst';
+
+  /********************************************* */
+
   constructor() { }
 
   ngOnInit() {

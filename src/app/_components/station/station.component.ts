@@ -8,6 +8,12 @@ import { IStationData } from 'src/app/_model/IStationData';
 })
 export class StationComponent implements OnInit {
   @Input() stationData: IStationData;
+
+/************************************************************************** */
+
+  ownText = '*-*-*-*-*-*';
+
+/************************************************************************** */
   constructor() { }
 
   ngOnInit() {
