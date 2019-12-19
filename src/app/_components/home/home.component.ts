@@ -9,11 +9,15 @@ import { IStationData } from 'src/app/_model/IStationData';
 })
 export class HomeComponent implements OnInit {
 
+
+
   stationData: IStationData[];
-  constructor() { }
+
+  constructor() {
+  }
 
   ngOnInit() {
-
   }
+
 
 }
